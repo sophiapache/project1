@@ -29,7 +29,8 @@ gem 'rspotify'
 gem 'bandsintown'
 gem 'httparty'
 gem 'musicbrainz'
-
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
