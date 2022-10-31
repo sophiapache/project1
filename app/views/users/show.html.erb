@@ -1,0 +1,18 @@
+<h1>
+    <%= @user.name %>
+</h1>
+
+<%= image_tag @user.profpic if @user.profpic.present? %>
+
+<ul>
+    <li>Name: <%= @user.name %></li>
+    <li>Date of Birth: <%= @user.dob %></li>
+    <li>Favorite Artists: <%= @user.favartists %></li>
+    <li>Description: <%= @user.description %></li>
+</ul>
+
+<% if @current_user.present? %>
+<div class="controls">
+    <%= link_to "Edit profile", edit_user_path(@user.id) %>
+</div>
+<% end %>

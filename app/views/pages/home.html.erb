@@ -1,0 +1,12 @@
+<h1>Attendr</h1>
+<p>Welcome to Attendr.</p>
+
+<% if @current_user.present? %>
+    <h2>Welcome back <%= @current_user.email %></h2>
+<% end %>
+
+<p>
+<% @event_info.each do |event| %>
+    <p><%= image_tag event['images'][2]['url'] %></p>
+    <p><%= link_to event['name'], event_path(event['id']) %></p>
+<% end %>

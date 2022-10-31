@@ -1,0 +1,12 @@
+
+
+    <h1>
+        <%= @event["name"] %>
+    </h1>
+    <p><%= image_tag @event["images"][0]["url"] %></p>
+    <p><%= @event["name"] %></p>
+    <p><%= @event["dates"]["start"]["localDate"]%> 
+    <%= @event["dates"]["start"]["localTime"]%></p>
+    <p><%= @event["_embedded"]["venues"][0]["city"]["name"]%>, <%= @event["_embedded"]["venues"][0]["state"]["name"]%></p>
+    <p><%= link_to @event["_embedded"]["attractions"][0]["name"], "/artist/#{@event['id']}/#{@event_index}" %></p>
+    <%= link_to @event["url"] %>
