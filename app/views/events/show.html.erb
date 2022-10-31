@@ -9,4 +9,5 @@
     <%= @event["dates"]["start"]["localTime"]%></p>
     <p><%= @event["_embedded"]["venues"][0]["city"]["name"]%>, <%= @event["_embedded"]["venues"][0]["state"]["name"]%></p>
     <p><%= link_to @event["_embedded"]["attractions"][0]["name"], "/artist/#{@event['id']}/#{@event_index}" %></p>
+    <p><%= link_to @event["_embedded"]["venues"][0]["name"], "/venue/#{@event['id']}/#{@event_index}" %></p>
     <%= link_to @event["url"] %>

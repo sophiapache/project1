@@ -1,12 +1,18 @@
 <h1>
-    <%= @artist1.name %>
+    <%= @artist.name %>
 </h1>
 
 <%= image_tag @aimage if @aimage.present? %>
 
 <ul>
-    <li>Name: <%= @artist1.name %></li>
-    <li>Genres: <%= @agenres %></li>
-    <li>Top Tracks: <%= @atracks %></li>
+    <li>Name: <%= @artist.name%></li>
+    <li>Genres: <%= @agenre1 %>, <%= @agenre2 %>, <%= @agenre3 %></li>
+    <li>Top Tracks: <%= @atrack1 %>, <%= @atrack2 %>, <%= @atrack3 %></li>
+    <li>Albums: <br> <%= @album1.name %><br>
+    <%= image_tag @album1.images[0]["url"] %> <br>
+    <%= @album2.name %><br>
+    <%= image_tag @album2.images[1]["url"] %><br>
+    <%= @album3.name %><br>
+    <%= image_tag @album3.images[0]["url"] %>
 </ul>
 
