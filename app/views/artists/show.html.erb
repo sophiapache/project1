@@ -9,13 +9,9 @@
     <li>Genres: <%= @agenre1 %>, <%= @agenre2 %>, <%= @agenre3 %></li>
     <li>Top Tracks: <%= @atrack1 %>, <%= @atrack2 %>, <%= @atrack3 %></li>
 </ul>
-Albums: 
         <figure class="albums">
-            <figcaption class="caption"><%= @album1.name %></figcaption>
             <%= image_tag @album1.images[0]["url"], :class => 'thumbnails' %> 
-            <figcaption class="caption"><%= @album2.name %></figcaption>
             <%= image_tag @album2.images[1]["url"], :class => 'thumbnails' %>
-            <figcaption class="caption"><%= @album3.name %></figcaption>
             <%= image_tag @album3.images[0]["url"], :class => 'thumbnails' %>
         </figure>
 

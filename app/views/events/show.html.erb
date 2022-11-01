@@ -29,6 +29,7 @@
         <p><%= @event["_embedded"]["venues"][0]["name"] %></p>
 <% end %>
 
-    <%= link_to @event["url"] %>
+    <%= button_to "Buy Tickets", @event["url"], :class => 'btn btn-secondary' %>
     <p>
+
 
