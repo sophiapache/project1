@@ -68,7 +68,6 @@ figure.albums {
 }
 .carousel-item img {
     object-fit: fill;
-    width: 700px;
     height: 500px;
     opacity: 0.8;
 }
