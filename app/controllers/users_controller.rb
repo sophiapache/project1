@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     def update
         user = User.find params[:id]
         user.update profile_params
+        user.save
         redirect_to user
     end
     private

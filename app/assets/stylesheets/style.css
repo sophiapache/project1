@@ -16,6 +16,21 @@ a {
 }
 
 
+.thumbnails {
+    width: 150px;
+    height: 150px;
+}
+
+figure.albums {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.caption {
+    display: block;
+}
+
 .carousel {
     position: relative;
 }

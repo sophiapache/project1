@@ -2,7 +2,7 @@
     <%= @venue_info["name"] %>
 </h1>
 
-<%= image_tag @venue_info["images"][0]["url"] unless @venue_info["images"][0]["url"] = nil %>
+<%= image_tag @venue_info["images"][0]["url"] unless @venue_info["images"].nil? %>
 
 <ul>
     <li>Name: <%= @venue_info["name"]%></li>

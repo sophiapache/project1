@@ -8,11 +8,16 @@
     <li>Name: <%= @artist.name%></li>
     <li>Genres: <%= @agenre1 %>, <%= @agenre2 %>, <%= @agenre3 %></li>
     <li>Top Tracks: <%= @atrack1 %>, <%= @atrack2 %>, <%= @atrack3 %></li>
-    <li>Albums: <br> <%= @album1.name %><br>
-    <%= image_tag @album1.images[0]["url"] %> <br>
-    <%= @album2.name %><br>
-    <%= image_tag @album2.images[1]["url"] %><br>
-    <%= @album3.name %><br>
-    <%= image_tag @album3.images[0]["url"] %>
 </ul>
+Albums: 
+        <figure class="albums">
+            <figcaption class="caption"><%= @album1.name %></figcaption>
+            <%= image_tag @album1.images[0]["url"], :class => 'thumbnails' %> 
+            <figcaption class="caption"><%= @album2.name %></figcaption>
+            <%= image_tag @album2.images[1]["url"], :class => 'thumbnails' %>
+            <figcaption class="caption"><%= @album3.name %></figcaption>
+            <%= image_tag @album3.images[0]["url"], :class => 'thumbnails' %>
+        </figure>
 
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/<%= @artist_id %>?utm_source=generator" width="75%" height="340" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

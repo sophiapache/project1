@@ -8,4 +8,12 @@ class EventsController < ApplicationController
         end.first
         # @event = Event.find params[:id]
     end
+
+    def attend
+        @event = Event.find params[:id]
+        @current_user.attendances
+        @current_user.save
+        redirect_to event
+    end
+
 end
