@@ -32,10 +32,3 @@
     <%= link_to @event["url"] %>
     <p>
 
-<%= form_for @event do |f| %>
-    <%= f.label "Are you attending?"%>
-    <%= f.check_box :attendance %>
-    <%= f.submit "I'm Attending!" %>
-<% end %>
-
-
