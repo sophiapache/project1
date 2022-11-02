@@ -4,7 +4,7 @@ class Artist < ApplicationRecord
         spotify_url = hash["externalLinks"]["spotify"]
         spotify = spotify_url[0]["url"][32,22] unless spotify_url.nil?
         artist = Artist.find_by :spotify => spotify
-        if artist.nil? && spotify.present?
+        if artist.nil?
             info = RSpotify::Artist.find(spotify)
             artist = Artist.new
             artist.spotify = spotify
