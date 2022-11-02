@@ -13,9 +13,11 @@ class Event < ApplicationRecord
             event.city = hash["_embedded"]["venues"][0]["city"]["name"]
             event.state = hash["_embedded"]["venues"][0]["state"]["name"]
             event.save
-            hash["_embedded"]["attractions"].each do |attraction|
-                artist = Artist.import_artist(attraction) unless attraction.dig("externalLinks", "spotify").nil?
-                event.artists << artist unless artist.nil?
+            if hash.dig("_embedded", "attractions").present?
+                hash["_embedded"]["attractions"].each do |attraction|
+                    artist = Artist.import_artist(attraction) unless attraction.dig("externalLinks", "spotify").nil?
+                    event.artists << artist unless artist.nil?
+                end
             end
         end
         event
