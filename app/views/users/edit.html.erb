@@ -1,18 +1,20 @@
 <%= form_for @user do |f| %>
+<p>
     <%= f.label :name %>
     <%= f.text_field :name %>
-
+</p><p>
     <%= f.label :profpic, 'Profile Picture' %>
     <%= f.url_field :profpic, :placeholder => 'URL'%>
-
+</p><p>
     <%= f.label :dob, 'Date of Birth'%>
     <%= f.text_field :dob, :placeholder => 'YYYY-MM-DD' %>
-
+</p><p>
     <%= f.label :favartists, 'Favorite Artists'%>
     <%= f.text_field :favartists%>
-
+</p><p>
     <%= f.label :description%>
     <%= f.text_field :description, class: "description"%>
-
+</p><p>
     <%= f.submit %>
+</p>
 <% end %>

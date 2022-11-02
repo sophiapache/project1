@@ -7,8 +7,12 @@
 
 <% @event.artists.each do |artist| %>
     <%= link_to artist.name, artist %>
-<% end  %>
+<% end  %><p>
+
+<%= link_to @venue.name, "/venue/#{@event.id}/#{@event.venue_id}" %>
+</p><p>
 <%= form_tag attendances_path do%>
     <input type="hidden" name="attendance[event_id]" value="<%= @event.id %>">
     <input type="submit" value="I'm Attending!">
 <% end %>
+</p>

@@ -2,12 +2,12 @@
     <%= @artist.name %>
 </h1>
 
-<%= image_tag @artist.image if @artist.image.present? %>
+<%= image_tag @artist.image, :class => 'artist' if @artist.image.present?%>
 
 <ul>
-    <li>Name: <%= @artist.name%></li>
-    <li>Genres: <%= @artist.genres %></li>
-    <li>Top Tracks: <%= @artist.tracks %></li>
+    <li><strong>Name:</strong> <%= @artist.name%></li>
+    <li><strong>Genres:</strong> <%= @artist.genres %></li>
+    <li><strong>Top Tracks:</strong> <%= @artist.tracks %></li>
 </ul>
         <figure class="albums">
             <%= image_tag @artist.albumimg, :class => 'thumbnails' %> 

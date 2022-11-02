@@ -7,6 +7,7 @@ class EventsController < ApplicationController
             e['id'] == params[:id]
         end.first
         @event = Event.import_event(event_data)
+        @venue = Venue.import_venue(event_data)
         # @event = Event.find params[:id]
     end
 
