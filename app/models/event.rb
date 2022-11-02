@@ -12,7 +12,6 @@ class Event < ApplicationRecord
             event.date = hash["dates"]["start"]["localDate"]
             event.city = hash["_embedded"]["venues"][0]["city"]["name"]
             event.state = hash["_embedded"]["venues"][0]["state"]["name"]
-            event.venue_id = hash["_embedded"]["venues"][0]["id"]
             event.save
             hash["_embedded"]["attractions"].each do |attraction|
                 artist = Artist.import_artist(attraction) unless attraction.dig("externalLinks", "spotify").nil?
