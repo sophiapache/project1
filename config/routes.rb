@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :users
   resources :events, :only => [:show]
-  resources :venues, :only => [:show]
   resources :attendances, :only => [:create, :destroy]
   resources :artists, :only => [:show]
 
