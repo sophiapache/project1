@@ -1,10 +1,9 @@
-<%= form_for @user do |f| %>
+<%= form_for(@user, :html => {:multipart => true}) do |f| %>
 <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
 </p><p>
-    <%= f.label :profpic, 'Profile Picture' %>
-    <%= f.url_field :profpic, :placeholder => 'URL'%>
+    <%= f.cl_image_upload :profpic%>
 </p><p>
     <%= f.label :dob, 'Date of Birth'%>
     <%= f.text_field :dob, :placeholder => 'YYYY-MM-DD' %>

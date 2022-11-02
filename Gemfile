@@ -31,6 +31,7 @@ gem 'httparty'
 gem 'musicbrainz'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'cloudinary'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

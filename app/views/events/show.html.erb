@@ -4,15 +4,18 @@
 <p><%= @event.name %></p>
     <p><%= @event.date.strftime '%A, %B %e, %Y'%> 
     <p><%= @event.city%>, <%= @event.state%></p>
-
+<p>
 <% @event.artists.each do |artist| %>
     <%= link_to artist.name, artist %>
-<% end  %><p>
+<% end  %></p><p>
 
 <%= link_to @venue.name, "/venue/#{@event.id}/#{@event.venue_id}" %>
 </p><p>
-<%= form_tag attendances_path do%>
-    <input type="hidden" name="attendance[event_id]" value="<%= @event.id %>">
-    <input type="submit" value="I'm Attending!">
+
+<% if @current_user.present? %>
+    <%= form_tag attendances_path do%>
+        <input type="hidden" name="attendance[event_id]" value="<%= @event.id %>">
+        <input type="submit" class="btn btn-secondary" value="I'm Attending!">
+    <% end %>
 <% end %>
 </p>

@@ -3,7 +3,7 @@
     <%= @user.name %>
 </h1>
 
-<%= image_tag @user.profpic if @user.profpic.present? %>
+<%= cl_image_tag @user.profpic, :class => 'user' if @user.profpic.present? %>
 
 <ul>
     <li><strong>Name:</strong> <%= @user.name %></li>
@@ -17,3 +17,10 @@
     <%= link_to "Edit profile", edit_user_path(@user.id) %>
 </div>
 <% end %>
+
+<p>
+<h2>Other Users</h2>
+<% User.all.each do |user| %>
+    <p><%= link_to user.email, user %></p>
+<% end  %><p>
+</p>
