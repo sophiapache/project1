@@ -1,11 +1,13 @@
 <h1>
-    <%= @venue_info["name"] %>
+    <%= @venue.name %>
 </h1>
+
+
 <p>
-<%= image_tag @venue_info["images"][0]["url"] unless @venue_info["images"].nil? %>
+<%= image_tag @venue.image unless @venue.image.nil? %>
 </p>
 
-    <p><strong>Name:</strong> <%= @venue_info["name"]%></p>
-    <p><strong>Address:</strong> <%= @venue_info["address"]["line1"]%></p>
-    <p><%= @venue_info["city"]["name"]%>, <%= @venue_info["state"]["stateCode"]%> <%= @venue_info["country"]["name"]%></p>
+    <p><strong>Name:</strong> <%= @venue.name%></p>
+    <p><strong>Address:</strong> <%= @venue.address%></p>
+    <p><%= @venue.location%></p>
 
