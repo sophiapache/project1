@@ -1,0 +1,36 @@
+
+
+    <h1>
+        <%= @event["name"] %>
+    </h1>
+    <p><%= image_tag @event["images"][1]["url"], :class => "img-thumbnail" %></p>
+    <p><%= @event["name"] %></p>
+    <p><%= @event["dates"]["start"]["localDate"]%> 
+    <%= @event["dates"]["start"]["localTime"]%></p>
+    <p><%= @event["_embedded"]["venues"][0]["city"]["name"]%>, <%= @event["_embedded"]["venues"][0]["state"]["name"]%></p>
+
+<% begin %>
+    <% if @info["_embedded"]["events"][@event_index.to_i]["_embedded"]["attractions"][0]["externalLinks"]["spotify"].nil? %>
+        <p><%= @event["_embedded"]["attractions"][0]["name"] %></p>
+    <% else %>
+        <p><%= link_to @event["_embedded"]["attractions"][0]["name"], "/artist/#{@event['id']}/#{@event_index}" %></p>
+    <% end %>
+<% rescue %>
+        <p><%= @event["_embedded"]["attractions"][0]["name"] %></p>
+<% end %>
+
+<% begin %>
+    <% if @info["_embedded"]["events"][@event_index.to_i]["_embedded"]["venues"].nil? %>
+        <p><%= @event["_embedded"]["venues"][0]["name"] %></p>
+    <% else %>
+    <p><%= link_to @event["_embedded"]["venues"][0]["name"], "/venue/#{@event['id']}/#{@event_index}" %></p>
+    <% end %>
+<% rescue %>
+        <p><%= @event["_embedded"]["venues"][0]["name"] %></p>
+<% end %>
+
+<%= form_tag attendances_path do%>
+    <input type="hidden" name="attendance[event_id]" value="<%= @event.id %>">
+    <input type="submit" value="I'm Attending!">
+<% end %>
+

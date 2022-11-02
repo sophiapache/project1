@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_01_013142) do
+ActiveRecord::Schema.define(version: 2022_11_02_015908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_11_01_013142) do
     t.text "albumimg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "spotify"
   end
 
   create_table "artists_events", force: :cascade do |t|
@@ -35,15 +36,22 @@ ActiveRecord::Schema.define(version: 2022_11_01_013142) do
   end
 
   create_table "attendances", force: :cascade do |t|
-    t.integer "user_ID"
+    t.integer "user_id"
     t.boolean "attend"
-    t.integer "event_ID"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.integer "venue_id"
+    t.text "name"
+    t.text "image"
+    t.date "date"
+    t.text "city"
+    t.text "state"
+    t.string "ticket_id"
+    t.text "spotify"
   end
 
   create_table "users", force: :cascade do |t|

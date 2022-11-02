@@ -2,18 +2,16 @@
     <%= @artist.name %>
 </h1>
 
-<%= image_tag @aimage if @aimage.present? %>
+<%= image_tag @artist.image if @artist.image.present? %>
 
 <ul>
     <li>Name: <%= @artist.name%></li>
-    <li>Genres: <%= @agenre1 %>, <%= @agenre2 %>, <%= @agenre3 %></li>
-    <li>Top Tracks: <%= @atrack1 %>, <%= @atrack2 %>, <%= @atrack3 %></li>
+    <li>Genres: <%= @artist.genres %></li>
+    <li>Top Tracks: <%= @artist.tracks %></li>
 </ul>
         <figure class="albums">
-            <%= image_tag @album1.images[0]["url"], :class => 'thumbnails' %> 
-            <%= image_tag @album2.images[1]["url"], :class => 'thumbnails' %>
-            <%= image_tag @album3.images[0]["url"], :class => 'thumbnails' %>
+            <%= image_tag @artist.albumimg, :class => 'thumbnails' %> 
         </figure>
+<p>
 
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/<%= @artist_id %>?utm_source=generator" width="75%" height="340" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/<%= @artist.spotify %>?utm_source=generator" width="75%" height="340" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

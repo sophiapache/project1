@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   resources :users
   resources :events, :only => [:show]
   resources :venues, :only => [:show]
+  resources :attendances, :only => [:create, :destroy]
+  resources :artists, :only => [:show]
 
-  get '/artist/:id/:index' => 'artists#show'
   get '/venue/:id/:index' => 'venues#show'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
-  post '/events/:id/attend' => 'events#attend'
 end
