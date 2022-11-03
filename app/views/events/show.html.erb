@@ -1,10 +1,11 @@
 <h1><%= @event.name %></h1>
 
-    <p><%= image_tag @event.image, :class => "img-thumbnail" %></p>
+<p><%= image_tag @event.image, :class => "img-thumbnail" %></p>
 <p><%= @event.name %></p>
-    <p><%= @event.date.strftime '%A, %B %e, %Y'%> 
-    <p><%= @event.city%>, <%= @event.state%></p>
+<p><%= @event.date.strftime '%A, %B %e, %Y'%> 
+<p><%= @event.city%>, <%= @event.state%></p>
 <p>
+
 <% @event.artists.each do |artist| %>
     <%= link_to artist.name, artist %>
 <% end  %></p><p>
@@ -22,7 +23,5 @@
     <p> Other users attending: </p>
     <% @event.attendances.each do |attendance| %>
     <p><%= link_to attendance.user.username, "/users/#{ attendance.user_id }" %></p>
-<% end  %><p>
-    </p>
+    <% end  %>
 <% end %>
-</p>

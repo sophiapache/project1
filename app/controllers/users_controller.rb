@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+    # create new user
     def new
     @user = User.new
     end
     
+    # insert user params into user
     def create
     @user = User.new user_params
         if @user.save
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
         @user = User.find params[:id]
     end
 
+    # update user params
     def update
         user = User.find params[:id]
 
@@ -34,7 +37,6 @@ class UsersController < ApplicationController
         user.save
         redirect_to user
     end
-
 
     private
     def user_params

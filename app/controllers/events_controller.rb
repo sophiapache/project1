@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+    # retrieves the event data from the ticketmaster API and imports the event data into the event model
+    # also imports the venue data in the event data into the venue model
     def show 
         @info = HTTParty.get "https://app.ticketmaster.com/discovery/v2/events?apikey=rDwbiCu00wsFFtXlNb7oOckZAW0qWUDY&locale=*&dmaId=701&genreId=KnvZfZ7vAvF" 
         @event_info = @info["_embedded"]["events"]
@@ -9,7 +11,6 @@ class EventsController < ApplicationController
         @event = Event.import_event(event_data)
         @venue = Venue.import_venue(event_data)
         @venue.events << @event
-        # @event = Event.find params[:id]
     end
 
 end

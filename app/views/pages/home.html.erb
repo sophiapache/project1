@@ -5,14 +5,14 @@
         <div class="carousel-item active">
             <%= image_tag "https://i.ibb.co/bHCWQ1Z/event.jpg", :class => "d-block w-100" %>
             <div class="carousel-caption d-none d-md-block">
-            <h1>Events</h2>
+                <h1>Events</h2>
             </div>
         </div>
     <% @event_info.each do |event| %>
         <div class="carousel-item">
             <%= image_tag event['images'][9]['url']%>
             <div class="carousel-caption d-none d-md-block">
-                <h5><%= link_to event['name'], event_path(event['id']), :class => 'link' %></h5>
+            <h5><%= link_to event['name'], event_path(event['id']), :class => 'link' %></h5>
             </div>
         </div>
     <% end %>

@@ -1,5 +1,7 @@
 class Venue < ApplicationRecord
     has_many :events
+
+        # the method below imports the venue data from the ticketmaster API into the venue model
     def self.import_venue (hash)
             venue = Venue.new
             venue.name = hash["_embedded"]["venues"][0]["name"]

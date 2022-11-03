@@ -9,9 +9,9 @@
     <li><strong>Genres:</strong> <%= @artist.genres %></li>
     <li><strong>Top Tracks:</strong> <%= @artist.tracks %></li>
 </ul>
-        <figure class="albums">
-            <%= image_tag @artist.albumimg, :class => 'thumbnails' %> 
-        </figure>
+    <figure class="albums">
+        <%= image_tag @artist.albumimg, :class => 'thumbnails' %> 
+    </figure>
 <p>
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/<%= @artist.spotify %>?utm_source=generator" width="75%" height="340" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
