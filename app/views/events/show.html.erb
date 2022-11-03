@@ -14,14 +14,14 @@
 
 <% attendance =  @current_user.attendances.find_by(event: @event)%>
 <% if @current_user.present? && attendance.nil? %>
-    <%= button_to "I'm Attending!", attendances_path, params: { attendance: { event_id: @event.id }}, method: :post %>
+    <%= button_to "I'm Attending!", attendances_path, params: { attendance: { event_id: @event.id }}, method: :post, :class => 'btn btn-secondary' %>
 <% elsif @current_user.present? && attendance.present? %>
-    <%= button_to "I am no longer attending.", attendance_path(attendance), method: :delete %>
+    <%= button_to "I am no longer attending.", attendance_path(attendance), method: :delete, :class => 'btn btn-secondary'%>
     <p><p>
     You are now attending this event.
     <p> Other users attending: </p>
-    <% Attendance.all.each do |attendance| %>
-    <p><%= link_to attendance.user_id, "/users/#{ attendance.user_id }" %></p>
+    <% @event.attendances.each do |attendance| %>
+    <p><%= link_to attendance.user.username, "/users/#{ attendance.user_id }" %></p>
 <% end  %><p>
     </p>
 <% end %>

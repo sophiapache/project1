@@ -19,7 +19,7 @@
     <div class="navbar-nav">
       <%= link_to 'Home', root_path, :class => "nav-item nav-link active" %>
         <% if @current_user.present? %>
-          <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete', :class => "nav-item nav-link"%><br>
+          <%= link_to "Sign out #{ @current_user.username }", login_path, :method => 'delete', :class => "nav-item nav-link"%><br>
           <%= link_to "Edit profile", edit_user_path(@current_user), :class => "nav-item nav-link" %><br>
           <%= link_to "View profile", user_path(@current_user), :class => "nav-item nav-link" %><br>
         <% else %>

@@ -1,26 +1,32 @@
 
 <h1>
-    <%= @user.name %>
+    <%= @user.username %>
 </h1>
 
 <%= cl_image_tag @user.profpic, :class => 'user' if @user.profpic.present? %>
 
-<ul>
-    <li><strong>Name:</strong> <%= @user.name %></li>
-    <li><strong>Date of Birth:</strong> <%= @user.dob %></li>
-    <li><strong>Favorite Artists:</strong> <%= @user.favartists %></li>
-    <li><strong>Description:</strong> <%= @user.description %></li>
-</ul>
+
+<p><strong>Name:</strong> <%= @user.name %></p>
+<p><strong>Date of Birth:</strong> <%= @user.dob %></p>
+<p><strong>Favorite Artists:</strong> <%= @user.favartists %></p>
+<p><strong>Description:</strong> <%= @user.description %></p>
+<p><strong>Events Attending:</strong>
+    <% attendance =  @current_user.attendances %>
+    <% attendance.each do |attendance| %>
+    <p><%= link_to attendance.event.name, "/events/#{ attendance.event.ticket_id }" %></p>
+<% end  %><p>
+</p>
+
 
 <% if @current_user.present? && @current_user == @user %>
 <div class="controls">
-    <%= link_to "Edit profile", edit_user_path(@user.id) %>
+    <%= button_to "Edit profile", edit_user_path(@user.id), :class => 'btn btn-secondary' %>
 </div>
 <% end %>
 
 <p>
 <h2>Other Users</h2>
 <% User.all.each do |user| %>
-    <p><%= link_to user.email, user %></p>
+    <p><%= link_to user.username, user %></p>
 <% end  %><p>
 </p>
