@@ -19,6 +19,10 @@
     <%= button_to "I am no longer attending.", attendance_path(attendance), method: :delete %>
     <p><p>
     You are now attending this event.
+    <p> Other users attending: </p>
+    <% Attendance.all.each do |attendance| %>
+    <p><%= link_to attendance.user_id, "/users/#{ attendance.user_id }" %></p>
+<% end  %><p>
     </p>
 <% end %>
 </p>
