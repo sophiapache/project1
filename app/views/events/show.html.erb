@@ -12,10 +12,13 @@
 <%= link_to @venue.name, "/venue/#{@event.id}/#{@event.venue_id}" %>
 </p><p>
 
-<% if @current_user.present? %>
-    <%= form_tag attendances_path do%>
-        <input type="hidden" name="attendance[event_id]" value="<%= @event.id %>">
-        <input type="submit" class="btn btn-secondary" value="I'm Attending!">
-    <% end %>
+<% attendance =  @current_user.attendances.find_by(event: @event)%>
+<% if @current_user.present? && attendance.nil? %>
+    <%= button_to "I'm Attending!", attendances_path, params: { attendance: { event_id: @event.id }}, method: :post %>
+<% elsif @current_user.present? && attendance.present? %>
+    <%= button_to "I am no longer attending.", attendance_path(attendance), method: :delete %>
+    <p><p>
+    You are now attending this event.
+    </p>
 <% end %>
 </p>
