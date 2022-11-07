@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
     has_and_belongs_to_many :artists
     belongs_to :venues, :optional => true
+    has_many :comments
     has_many :attendances
 
         # the method below imports the event data from the ticketmaster API into the event model

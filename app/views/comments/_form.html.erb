@@ -1,0 +1,9 @@
+<div class="card p-3 bg-dark">
+
+<form action="<%= event_comments_path(event) %>" method="post">
+    <input type="hidden" name="authenticity_token"><p></p>
+    <p><textarea name="comment[content]" cols="50" rows="3"></textarea></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="card p-3 bg-dark">
+
+
+    <%= cl_image_tag comment.user.profpic, style: 'width:45px; height: 50px;', :class => 'user-img rounded-circle mr-2' if comment.user.profpic.present? %>
+    <span><small class="font-weight-bold text-primary"><%= comment.user.username %></small> 
+    <small class="font-weight-bold"><%= comment.content %></small></span>
+
+    <p><small><%= button_to "Delete comment", event_comment_path(comment), method: :delete, :class => 'btn btn-secondary'%></small></p>
+
+</div>

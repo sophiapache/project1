@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :users
-  resources :events, :only => [:show]
+  resources :events, :only => [:show] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :attendances, :only => [:create, :destroy]
   resources :artists, :only => [:show]
 

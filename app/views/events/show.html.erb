@@ -25,3 +25,8 @@
     <p><%= link_to attendance.user.username, "/users/#{ attendance.user_id }" %></p>
     <% end  %>
 <% end %>
+<p><p>
+    <strong>Comments:</strong>
+    <%= render @event.comments %>
+    <%= render partial: 'comments/form', locals: { event: @event } %>
+</p></p>
