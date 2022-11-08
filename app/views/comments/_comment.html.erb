@@ -2,7 +2,13 @@
 
 
     <%= cl_image_tag comment.user.profpic, style: 'width:45px; height: 50px;', :class => 'user-img rounded-circle mr-2' if comment.user.profpic.present? %>
-    <span><small class="font-weight-bold text-primary"><%= link_to comment.user.username, comment.user %></small> 
+    <span><small class="commentlink">
+    <% if @current_user.present? %>
+        <i><%= link_to comment.user.username, comment.user %></i>
+    <% else %>
+        <%= comment.user.username%>
+    <% end %>
+    </small> 
     <small class="font-weight-bold"><%= comment.content %></small></span>
     <% if @current_user.present? && @current_user == comment.user %>
         <p><small><%= button_to "Delete comment", event_comment_path(comment), :method => 'delete', :class => 'btn btn-secondary'%></small></p>

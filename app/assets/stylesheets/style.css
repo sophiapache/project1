@@ -20,6 +20,12 @@ a {
     -webkit-text-stroke: 0.2px black;
 }
 
+.commentlink {
+    color: rgb(92, 113, 113);
+    letter-spacing: 0.2em;
+    -webkit-text-stroke: 0.2px black;
+}
+
 a:hover {
     color: rgb(77, 0, 0);
 }
