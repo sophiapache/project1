@@ -28,5 +28,7 @@
 <p><p>
     <strong>Comments:</strong>
     <%= render @event.comments %>
-    <%= render partial: 'comments/form', locals: { event: @event } %>
+    <% if @current_user.present? %>
+        <%= render partial: 'comments/form', locals: { event: @event } %>
+    <% end %>
 </p></p>
