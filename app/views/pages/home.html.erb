@@ -13,6 +13,7 @@
             <%= image_tag event['images'][9]['url']%>
             <div class="carousel-caption d-none d-md-block">
             <h5><%= link_to event['name'], event_path(event['id']), :class => 'link' %></h5>
+            <h4><%= event["_embedded"]["venues"][0]["city"]["name"]%>, <%= event["_embedded"]["venues"][0]["state"]["name"] %> </h3>
             </div>
         </div>
     <% end %>
