@@ -32,4 +32,6 @@
         <%= render partial: 'comments/form', locals: { event: @event } %>
     <% end %>
 </p></p><p></p><p></p>
-<p><i>Log in to make comments and register your event attendances.</i></p>
+<% if @current_user.nil? %>
+    <p><i>Log in to make comments and register your event attendances.</i></p>
+<% end %>
