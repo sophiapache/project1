@@ -1,3 +1,5 @@
+![image](https://github.com/sophiapache/project1/assets/113578180/5972ad8f-b21c-42a4-8d8c-9b72a35343da)
+
 # Attendr
 
 ## By Sophia Pache
